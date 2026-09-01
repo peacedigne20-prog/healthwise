@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>How You Can Help | Healthwise</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #172b35;
+            background: white;
+        }
+
+        header {
+            height: 78px;
+            padding: 0 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            border-bottom: 1px solid #e5ebe9;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        nav {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+        }
+
+        nav a {
+            color: #172b35;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: #177e78;
+        }
+
+        .hero {
+            background: #eef7f4;
+            padding: 110px 6% 120px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .small-title {
+            color: #177e78;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: clamp(50px, 7vw, 82px);
+            line-height: 1;
+            letter-spacing: -4px;
+            margin-bottom: 28px;
+        }
+
+        .hero h1 span {
+            color: #177e78;
+        }
+
+        .hero p {
+            max-width: 720px;
+            margin: auto;
+            color: #52656c;
+            font-size: 19px;
+            line-height: 1.8;
+        }
+
+        .ways {
+            padding: 105px 6%;
+        }
+
+        .ways-content {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .heading {
+            max-width: 750px;
+            margin-bottom: 55px;
+        }
+
+        .heading h2 {
+            font-size: 46px;
+            letter-spacing: -2px;
+            margin-bottom: 18px;
+        }
+
+        .heading p {
+            color: #52656c;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .way {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 65px;
+            padding: 42px 0;
+            border-top: 1px solid #dce5e2;
+        }
+
+        .way:last-child {
+            border-bottom: 1px solid #dce5e2;
+        }
+
+        .way h3 {
+            font-size: 29px;
+        }
+
+        .way p {
+            max-width: 650px;
+            color: #52656c;
+            font-size: 17px;
+            line-height: 1.85;
+        }
+
+        .donate {
+            background: #183b4e;
+            color: white;
+            padding: 105px 6%;
+        }
+
+        .donate-content {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .donate h2 {
+            font-size: 48px;
+            letter-spacing: -2px;
+            margin-bottom: 22px;
+        }
+
+        .donate p {
+            max-width: 720px;
+            margin: auto;
+            color: #d6e2e5;
+            font-size: 18px;
+            line-height: 1.85;
+        }
+
+        .donate-button {
+            display: inline-block;
+            margin-top: 32px;
+            background: white;
+            color: #183b4e;
+            text-decoration: none;
+            padding: 16px 30px;
+            border-radius: 8px;
+            font-weight: 700;
+        }
+
+        .donate-button:hover {
+            background: #eef7f4;
+        }
+
+        .transparency {
+            padding: 100px 6%;
+            background: #eef7f4;
+        }
+
+        .transparency-content {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .transparency h2 {
+            font-size: 44px;
+            margin-bottom: 22px;
+        }
+
+        .transparency p {
+            color: #52656c;
+            font-size: 18px;
+            line-height: 1.85;
+        }
+
+        .contact {
+            padding: 90px 6%;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 42px;
+            margin-bottom: 18px;
+        }
+
+        .contact p {
+            color: #52656c;
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .email {
+            color: #177e78;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        footer {
+            background: #102b38;
+            color: #c9d5d9;
+            text-align: center;
+            padding: 35px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 750px) {
+
+            header {
+                height: auto;
+                padding: 18px 25px;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                gap: 13px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav a {
+                font-size: 12px;
+            }
+
+            .hero {
+                padding: 75px 25px;
+            }
+
+            .hero h1 {
+                letter-spacing: -3px;
+            }
+
+            .ways,
+            .donate,
+            .transparency,
+            .contact {
+                padding: 75px 25px;
+            }
+
+            .heading h2,
+            .donate h2,
+            .transparency h2,
+            .contact h2 {
+                font-size: 36px;
+            }
+
+            .way {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo">Healthwise</div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="mission.html">Our Mission</a>
+            <a href="causes.html">Causes</a>
+            <a href="help.html">How You Can Help</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+    </header>
+
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="small-title">
+                MAKE A DIFFERENCE
+            </div>
+
+            <h1>
+                Your support can <span>help.</span>
+            </h1>
+
+            <p>
+                There are several ways to support Healthwise and the
+                people affected by the issues we focus on.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section class="ways">
+
+        <div class="ways-content">
+
+            <div class="heading">
+
+                <h2>
+                    There is more than one way to help.
+                </h2>
+
+                <p>
+                    You don't need to make a large contribution to have
+                    an impact. Every form of support can help bring more
+                    attention to healthcare access and humanitarian needs.
+                </p>
+
+            </div>
+
+
+            <div class="way">
+
+                <h3>
+                    Donate
+                </h3>
+
+                <p>
+                    Financial support can help trusted organizations
+                    provide medical care, essential medicine, emergency
+                    supplies, and humanitarian assistance to people who
+                    need it. Even a small donation can contribute to
+                    larger efforts when many people come together.
+                </p>
+
+            </div>
+
+
+            <div class="way">
+
+                <h3>
+                    Share
+                </h3>
+
+                <p>
+                    Sharing Healthwise with friends, family,
+                    and your community helps more people understand the
+                    problems surrounding healthcare access and
+                    humanitarian emergencies.
+                </p>
+
+            </div>
+
+
+            <div class="way">
+
+                <h3>
+                    Get Involved
+                </h3>
+
+                <p>
+                    If you have ideas, useful information, or ways to
+                    contribute to Healthwise, getting involved can help
+                    the project reach more people and make a greater
+                    difference.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="donate">
+
+        <div class="donate-content">
+
+            <h2>
+                Support the cause.
+            </h2>
+
+            <p>
+                Donations can help established organizations continue
+                providing healthcare, medicine, emergency assistance,
+                and other essential services to communities in need.
+            </p>
+
+            <a href="contact.html" class="donate-button">
+                Get Involved
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <section class="transparency">
+
+        <div class="transparency-content">
+
+            <h2>
+                Transparency matters.
+            </h2>
+
+            <p>
+                Healthwise is committed to being clear about how
+                donations are handled. Contributions should go toward
+                established organizations whose work directly supports
+                people affected by healthcare shortages and
+                humanitarian emergencies.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section class="contact">
+
+        <h2>
+            Have a question?
+        </h2>
+
+        <p>
+            For questions, suggestions, or information about supporting
+            Healthwise, get in touch.
+        </p>
+
+        <a class="email" href="mailto:peacedigne20@gmail.com">
+            peacedigne20@gmail.com
+        </a>
+
+    </section>
+
+
+    <footer>
+
+        <p>
+            © 2026 Healthwise
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
