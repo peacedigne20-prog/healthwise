@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Healthwise | Better Healthcare for Everyone</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #172b35;
+            background: #f7faf9;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.97);
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e4ebe8;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: -1px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #172b35;
+            margin-left: 25px;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: #177e78;
+        }
+
+
+        /* HERO */
+
+        .hero {
+            min-height: 720px;
+            display: flex;
+            align-items: center;
+            padding: 100px 7%;
+            background:
+                radial-gradient(circle at 85% 25%, #cfe9e1 0, #cfe9e1 13%, transparent 31%),
+                radial-gradient(circle at 65% 80%, #e5f3ef 0, #e5f3ef 12%, transparent 30%),
+                linear-gradient(135deg, #f7fbfa, #edf7f4);
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #dcefe9;
+            color: #17665f;
+            padding: 9px 16px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 28px;
+        }
+
+        .hero h1 {
+            font-size: clamp(65px, 10vw, 115px);
+            line-height: 0.9;
+            letter-spacing: -6px;
+            margin-bottom: 30px;
+        }
+
+        .hero h1 span {
+            color: #177e78;
+        }
+
+        .hero h2 {
+            font-size: 30px;
+            font-weight: normal;
+            line-height: 1.3;
+            max-width: 700px;
+            margin-bottom: 25px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #52656c;
+            max-width: 700px;
+            margin-bottom: 35px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #177e78;
+            color: white;
+            padding: 16px 26px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .button:hover {
+            background: #12655f;
+        }
+
+        .button-outline {
+            display: inline-block;
+            color: #177e78;
+            padding: 14px 24px;
+            border: 2px solid #177e78;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .button-outline:hover {
+            background: #177e78;
+            color: white;
+        }
+
+
+        /* INTRO */
+
+        .intro-section {
+            padding: 110px 7%;
+            background: white;
+        }
+
+        .intro-content {
+            max-width: 900px;
+        }
+
+        .small-title {
+            color: #177e78;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 18px;
+        }
+
+        .intro-content h2 {
+            font-size: 48px;
+            line-height: 1.15;
+            margin-bottom: 25px;
+        }
+
+        .intro-content p {
+            color: #52656c;
+            font-size: 19px;
+            line-height: 1.9;
+            max-width: 800px;
+        }
+
+
+        /* CAUSES */
+
+        .causes-section {
+            padding: 100px 7%;
+            background: #f7faf9;
+        }
+
+        .section-heading {
+            max-width: 750px;
+            margin-bottom: 50px;
+        }
+
+        .section-heading h2 {
+            font-size: 48px;
+            margin-bottom: 18px;
+        }
+
+        .section-heading p {
+            color: #52656c;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+            max-width: 1150px;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #e2eae7;
+            border-radius: 18px;
+            padding: 35px;
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .number {
+            color: #177e78;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+
+        .card h3 {
+            font-size: 27px;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: #52656c;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+
+        /* ACTION */
+
+        .action-section {
+            padding: 110px 7%;
+            background: #edf7f4;
+        }
+
+        .action-content {
+            max-width: 850px;
+        }
+
+        .action-content h2 {
+            font-size: 48px;
+            margin-bottom: 25px;
+        }
+
+        .action-content p {
+            color: #52656c;
+            font-size: 18px;
+            line-height: 1.9;
+            margin-bottom: 20px;
+        }
+
+
+        /* DONATION */
+
+        .donation-section {
+            padding: 110px 7%;
+            background: white;
+        }
+
+        .donation-box {
+            max-width: 1100px;
+            background: #183b4e;
+            color: white;
+            padding: 60px;
+            border-radius: 22px;
+        }
+
+        .donation-box .small-title {
+            color: #b9e1d8;
+        }
+
+        .donation-box h2 {
+            font-size: 48px;
+            line-height: 1.15;
+            margin-bottom: 22px;
+        }
+
+        .donation-box p {
+            color: #dce6e9;
+            font-size: 18px;
+            line-height: 1.8;
+            max-width: 750px;
+            margin-bottom: 30px;
+        }
+
+        .donation-box .button {
+            background: white;
+            color: #183b4e;
+        }
+
+
+        /* FOOTER */
+
+        footer {
+            background: #102b38;
+            color: #c9d5d9;
+            text-align: center;
+            padding: 35px;
+            font-size: 14px;
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 850px) {
+
+            header {
+                padding: 18px 25px;
+            }
+
+            nav a {
+                margin-left: 8px;
+                font-size: 12px;
+            }
+
+            .hero {
+                min-height: 650px;
+                padding: 80px 25px;
+            }
+
+            .hero h1 {
+                letter-spacing: -4px;
+            }
+
+            .hero h2 {
+                font-size: 24px;
+            }
+
+            .intro-section,
+            .causes-section,
+            .action-section,
+            .donation-section {
+                padding: 75px 25px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .intro-content h2,
+            .section-heading h2,
+            .action-content h2,
+            .donation-box h2 {
+                font-size: 36px;
+            }
+
+            .donation-box {
+                padding: 35px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <header>
+
+        <div class="logo">Healthwise</div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="mission.html">Our Mission</a>
+            <a href="causes.html">Causes</a>
+            <a href="help.html">How You Can Help</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="tag">
+                HEALTHCARE • AWARENESS • ACTION
+            </div>
+
+            <h1>
+                Health<span>wise</span>
+            </h1>
+
+            <h2>
+                Everyone deserves a chance to live a healthy life.
+            </h2>
+
+            <p>
+                Healthwise is a student-led initiative focused on
+                healthcare access, medicine, humanitarian assistance,
+                and health education. The goal is simple: learn about
+                these issues, raise awareness, and turn that awareness
+                into meaningful support.
+            </p>
+
+            <a href="causes.html" class="button">
+                Explore the Causes
+            </a>
+
+            <a href="help.html" class="button-outline">
+                How You Can Help
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- INTRO -->
+
+    <section class="intro-section">
+
+        <div class="intro-content">
+
+            <div class="small-title">
+                WHY HEALTHWISE EXISTS
+            </div>
+
+            <h2>
+                Healthcare shouldn't depend on where you're born.
+            </h2>
+
+            <p>
+                Millions of people face barriers to healthcare, medicine,
+                and basic health services. Healthwise exists to learn
+                about those barriers, share reliable information, and
+                support organizations already working to help people.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- CAUSES -->
+
+    <section class="causes-section">
+
+        <div class="section-heading">
+
+            <div class="small-title">
+                WHAT WE FOCUS ON
+            </div>
+
+            <h2>
+                Four areas. One goal.
+            </h2>
+
+            <p>
+                Healthwise focuses on issues that affect people's ability
+                to access healthcare and live healthy lives.
+            </p>
+
+        </div>
+
+
+        <div class="cards">
+
+
+            <div class="card">
+
+                <div class="number">
+                    01 — ACCESS
+                </div>
+
+                <h3>
+                    Healthcare Access
+                </h3>
+
+                <p>
+                    Many people face financial, geographic, or social
+                    barriers when trying to receive basic healthcare.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="number">
+                    02 — AID
+                </div>
+
+                <h3>
+                    Humanitarian Aid
+                </h3>
+
+                <p>
+                    People affected by conflict and emergencies can lose
+                    access to healthcare and other essential services.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="number">
+                    03 — MEDICINE
+                </div>
+
+                <h3>
+                    Access to Medicine
+                </h3>
+
+                <p>
+                    Essential medicines are not equally accessible
+                    everywhere, creating serious challenges for many
+                    communities.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ACTION -->
+
+    <section class="action-section">
+
+        <div class="action-content">
+
+            <div class="small-title">
+                FROM AWARENESS TO ACTION
+            </div>
+
+            <h2>
+                Learning is only the beginning.
+            </h2>
+
+            <p>
+                Healthwise is built around a simple idea: understanding
+                a problem should lead to doing something about it.
+            </p>
+
+            <p>
+                That means researching trustworthy organizations,
+                sharing reliable information, encouraging others to
+                get involved, and supporting effective work that is
+                already helping people.
+            </p>
+
+            <a href="help.html" class="button">
+                See How You Can Help
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- DONATION -->
+
+    <section class="donation-section">
+
+        <div class="donation-box">
+
+            <div class="small-title">
+                SUPPORT THE MISSION
+            </div>
+
+            <h2>
+                Your support can become someone else's opportunity.
+            </h2>
+
+            <p>
+                When people contribute together, even individual
+                donations can become meaningful support for organizations
+                providing healthcare and humanitarian assistance.
+            </p>
+
+            <a href="help.html" class="button">
+                Learn About Supporting Healthwise
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+
+        <p>
+            © 2026 Healthwise
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

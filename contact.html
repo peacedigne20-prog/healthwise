@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact | Healthwise</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #172b35;
+            background: white;
+        }
+
+        header {
+            height: 78px;
+            padding: 0 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            border-bottom: 1px solid #e5ebe9;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        nav {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+        }
+
+        nav a {
+            color: #172b35;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: #177e78;
+        }
+
+        .hero {
+            background: #eef7f4;
+            padding: 110px 6% 120px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .small-title {
+            color: #177e78;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: clamp(52px, 7vw, 82px);
+            line-height: 1;
+            letter-spacing: -4px;
+            margin-bottom: 28px;
+        }
+
+        .hero h1 span {
+            color: #177e78;
+        }
+
+        .hero p {
+            max-width: 680px;
+            margin: auto;
+            color: #52656c;
+            font-size: 19px;
+            line-height: 1.8;
+        }
+
+        .contact-section {
+            padding: 100px 6%;
+        }
+
+        .contact-content {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: start;
+        }
+
+        .contact-text h2 {
+            font-size: 44px;
+            letter-spacing: -1px;
+            margin-bottom: 22px;
+        }
+
+        .contact-text p {
+            color: #52656c;
+            font-size: 18px;
+            line-height: 1.85;
+            margin-bottom: 20px;
+        }
+
+        .contact-card {
+            background: #f3f8f6;
+            padding: 40px;
+            border-radius: 14px;
+            border: 1px solid #dfeae6;
+        }
+
+        .contact-card h3 {
+            font-size: 26px;
+            margin-bottom: 15px;
+        }
+
+        .contact-card p {
+            color: #52656c;
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .email {
+            display: inline-block;
+            color: #177e78;
+            font-size: 18px;
+            font-weight: 700;
+            text-decoration: none;
+            word-break: break-word;
+        }
+
+        .email:hover {
+            text-decoration: underline;
+        }
+
+        .details {
+            background: #183b4e;
+            color: white;
+            padding: 90px 6%;
+        }
+
+        .details-content {
+            max-width: 1000px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .details h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .details p {
+            color: #d6e2e5;
+            font-size: 18px;
+            line-height: 1.85;
+        }
+
+        .details-list p {
+            padding: 18px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.18);
+        }
+
+        .details-list p:first-child {
+            border-top: 1px solid rgba(255,255,255,0.18);
+        }
+
+        .bottom {
+            padding: 90px 6%;
+            text-align: center;
+            background: #eef7f4;
+        }
+
+        .bottom h2 {
+            font-size: 42px;
+            margin-bottom: 18px;
+        }
+
+        .bottom p {
+            max-width: 650px;
+            margin: auto;
+            color: #52656c;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        footer {
+            background: #102b38;
+            color: #c9d5d9;
+            text-align: center;
+            padding: 35px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 750px) {
+
+            header {
+                height: auto;
+                padding: 18px 25px;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                gap: 13px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav a {
+                font-size: 12px;
+            }
+
+            .hero {
+                padding: 75px 25px;
+            }
+
+            .contact-section,
+            .details,
+            .bottom {
+                padding: 75px 25px;
+            }
+
+            .contact-grid,
+            .details-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .contact-text h2,
+            .details h2,
+            .bottom h2 {
+                font-size: 36px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo">Healthwise</div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="mission.html">Our Mission</a>
+            <a href="causes.html">Causes</a>
+            <a href="help.html">How You Can Help</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+    </header>
+
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="small-title">
+                CONTACT HEALTHWISE
+            </div>
+
+            <h1>
+                Let's <span>connect.</span>
+            </h1>
+
+            <p>
+                Have a question, suggestion, or want to get in touch
+                about Healthwise? You can reach me directly by email.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section class="contact-section">
+
+        <div class="contact-content">
+
+            <div class="contact-grid">
+
+                <div class="contact-text">
+
+                    <h2>
+                        Get in touch
+                    </h2>
+
+                    <p>
+                        Healthwise is open to questions, ideas, and
+                        opportunities to help support its mission.
+                    </p>
+
+                    <p>
+                        If you would like to discuss the project,
+                        suggest a reliable organization, or share
+                        information related to healthcare access or
+                        humanitarian assistance, send an email.
+                    </p>
+
+                </div>
+
+
+                <div class="contact-card">
+
+                    <h3>
+                        Email
+                    </h3>
+
+                    <p>
+                        The easiest way to contact Healthwise is
+                        through email.
+                    </p>
+
+                    <a class="email" href="mailto:peacedigne20@gmail.com">
+                        peacedigne20@gmail.com
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="details">
+
+        <div class="details-content">
+
+            <div>
+
+                <h2>
+                    What you can reach out about
+                </h2>
+
+                <p>
+                    Whether you have a question about the project or
+                    want to share something that could help Healthwise,
+                    your message is welcome.
+                </p>
+
+            </div>
+
+
+            <div class="details-list">
+
+                <p>
+                    Questions about Healthwise
+                </p>
+
+                <p>
+                    Suggestions for the project
+                </p>
+
+                <p>
+                    Information about healthcare access
+                </p>
+
+                <p>
+                    Humanitarian organizations and resources
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="bottom">
+
+        <h2>
+            Thank you for supporting the mission.
+        </h2>
+
+        <p>
+            Raising awareness and supporting organizations doing
+            important work can help bring more attention to people
+            who need access to healthcare and humanitarian assistance.
+        </p>
+
+    </section>
+
+
+    <footer>
+
+        <p>
+            © 2026 Healthwise
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
