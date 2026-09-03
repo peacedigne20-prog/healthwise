@@ -1,427 +1,591 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Healthwise</title>
 
-    <title>Contact | Healthwise</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    <style>
+    html {
+      scroll-behavior: smooth;
+    }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f2f0eb;
+      color: #252a29;
+      line-height: 1.6;
+    }
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            color: #172b35;
-            background: white;
-        }
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(242, 240, 235, 0.96);
+      border-bottom: 1px solid #d8d5ce;
+      padding: 18px 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-        header {
-            height: 78px;
-            padding: 0 6%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: white;
-            border-bottom: 1px solid #e5ebe9;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+    .logo {
+      font-size: 25px;
+      font-weight: 700;
+      color: #252a29;
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
 
-        .logo {
-            font-size: 28px;
-            font-weight: 700;
-            letter-spacing: -1px;
-        }
+    .logo span {
+      color: #637c70;
+    }
 
-        nav {
-            display: flex;
-            gap: 28px;
-            align-items: center;
-        }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
 
-        nav a {
-            color: #172b35;
-            text-decoration: none;
-            font-size: 15px;
-            font-weight: 600;
-        }
+    .nav-links a {
+      color: #29312e;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+    }
 
-        nav a:hover {
-            color: #177e78;
-        }
+    .nav-links a:hover {
+      color: #637c70;
+    }
 
-        .hero {
-            background: #eef7f4;
-            padding: 110px 6% 120px;
-            text-align: center;
-        }
+    .donate-nav {
+      background: #29312e;
+      color: white !important;
+      padding: 10px 18px;
+      border-radius: 6px;
+    }
 
-        .hero-content {
-            max-width: 850px;
-            margin: auto;
-        }
+    .donate-nav:hover {
+      background: #637c70;
+    }
 
-        .small-title {
-            color: #177e78;
-            font-size: 14px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            margin-bottom: 25px;
-        }
+    .page-hero {
+      padding: 100px 7% 80px;
+      background: #29312e;
+      color: white;
+    }
 
-        .hero h1 {
-            font-size: clamp(52px, 7vw, 82px);
-            line-height: 1;
-            letter-spacing: -4px;
-            margin-bottom: 28px;
-        }
+    .page-hero-inner {
+      max-width: 900px;
+    }
 
-        .hero h1 span {
-            color: #177e78;
-        }
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #bfcac3;
+      margin-bottom: 18px;
+    }
 
-        .hero p {
-            max-width: 680px;
-            margin: auto;
-            color: #52656c;
-            font-size: 19px;
-            line-height: 1.8;
-        }
+    .page-hero h1 {
+      font-size: clamp(42px, 7vw, 76px);
+      line-height: 1.05;
+      letter-spacing: -2px;
+      margin-bottom: 24px;
+    }
 
-        .contact-section {
-            padding: 100px 6%;
-        }
+    .page-hero p {
+      max-width: 720px;
+      font-size: 19px;
+      color: #e2e5e2;
+    }
 
-        .contact-content {
-            max-width: 1000px;
-            margin: auto;
-        }
+    section {
+      padding: 90px 7%;
+    }
 
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 70px;
-            align-items: start;
-        }
+    .section-inner {
+      max-width: 1100px;
+      margin: auto;
+    }
 
-        .contact-text h2 {
-            font-size: 44px;
-            letter-spacing: -1px;
-            margin-bottom: 22px;
-        }
+    .section-label {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #637c70;
+      margin-bottom: 14px;
+    }
 
-        .contact-text p {
-            color: #52656c;
-            font-size: 18px;
-            line-height: 1.85;
-            margin-bottom: 20px;
-        }
+    .section-title {
+      font-size: clamp(32px, 5vw, 50px);
+      line-height: 1.1;
+      letter-spacing: -1px;
+      margin-bottom: 20px;
+      color: #252a29;
+    }
 
-        .contact-card {
-            background: #f3f8f6;
-            padding: 40px;
-            border-radius: 14px;
-            border: 1px solid #dfeae6;
-        }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
 
-        .contact-card h3 {
-            font-size: 26px;
-            margin-bottom: 15px;
-        }
+    .contact-intro {
+      color: #59615e;
+      font-size: 17px;
+      max-width: 600px;
+      margin-bottom: 35px;
+    }
 
-        .contact-card p {
-            color: #52656c;
-            font-size: 16px;
-            line-height: 1.7;
-            margin-bottom: 25px;
-        }
+    .contact-card {
+      background: #e7e4dd;
+      border: 1px solid #d8d5ce;
+      border-radius: 8px;
+      padding: 35px;
+    }
 
-        .email {
-            display: inline-block;
-            color: #177e78;
-            font-size: 18px;
-            font-weight: 700;
-            text-decoration: none;
-            word-break: break-word;
-        }
+    .contact-card h3 {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
 
-        .email:hover {
-            text-decoration: underline;
-        }
+    .contact-card p {
+      color: #59615e;
+      margin-bottom: 20px;
+      font-size: 15px;
+    }
 
-        .details {
-            background: #183b4e;
-            color: white;
-            padding: 90px 6%;
-        }
+    .email-link {
+      display: inline-block;
+      color: #29312e;
+      font-weight: 700;
+      text-decoration: none;
+      border-bottom: 2px solid #637c70;
+      padding-bottom: 3px;
+      word-break: break-word;
+    }
 
-        .details-content {
-            max-width: 1000px;
-            margin: auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 70px;
-            align-items: center;
-        }
+    .email-link:hover {
+      color: #637c70;
+    }
 
-        .details h2 {
-            font-size: 42px;
-            margin-bottom: 20px;
-        }
+    .social-box {
+      margin-top: 25px;
+      padding: 30px;
+      background: white;
+      border: 1px solid #d8d5ce;
+      border-radius: 8px;
+    }
 
-        .details p {
-            color: #d6e2e5;
-            font-size: 18px;
-            line-height: 1.85;
-        }
+    .social-box h3 {
+      font-size: 23px;
+      margin-bottom: 18px;
+    }
 
-        .details-list p {
-            padding: 18px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.18);
-        }
+    .social-links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
 
-        .details-list p:first-child {
-            border-top: 1px solid rgba(255,255,255,0.18);
-        }
+    .social-links a {
+      color: #29312e;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+    }
 
-        .bottom {
-            padding: 90px 6%;
-            text-align: center;
-            background: #eef7f4;
-        }
+    .social-links a:hover {
+      color: #637c70;
+    }
 
-        .bottom h2 {
-            font-size: 42px;
-            margin-bottom: 18px;
-        }
+    .info-section {
+      background: white;
+    }
 
-        .bottom p {
-            max-width: 650px;
-            margin: auto;
-            color: #52656c;
-            font-size: 18px;
-            line-height: 1.8;
-        }
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
 
-        footer {
-            background: #102b38;
-            color: #c9d5d9;
-            text-align: center;
-            padding: 35px;
-            font-size: 14px;
-        }
+    .info-card {
+      padding: 30px;
+      background: #f2f0eb;
+      border: 1px solid #d8d5ce;
+      border-radius: 8px;
+    }
 
-        @media (max-width: 750px) {
+    .info-card h3 {
+      font-size: 21px;
+      margin-bottom: 10px;
+    }
 
-            header {
-                height: auto;
-                padding: 18px 25px;
-                flex-direction: column;
-                gap: 15px;
-            }
+    .info-card p {
+      color: #59615e;
+      font-size: 14px;
+    }
 
-            nav {
-                gap: 13px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
+    .cta {
+      background: #29312e;
+      color: white;
+      text-align: center;
+    }
 
-            nav a {
-                font-size: 12px;
-            }
+    .cta .section-inner {
+      max-width: 800px;
+    }
 
-            .hero {
-                padding: 75px 25px;
-            }
+    .cta h2 {
+      font-size: clamp(34px, 5vw, 52px);
+      line-height: 1.1;
+      margin-bottom: 18px;
+    }
 
-            .contact-section,
-            .details,
-            .bottom {
-                padding: 75px 25px;
-            }
+    .cta p {
+      color: #dfe3e0;
+      font-size: 17px;
+      margin-bottom: 30px;
+    }
 
-            .contact-grid,
-            .details-content {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
+    .cta-button {
+      display: inline-block;
+      background: white;
+      color: #29312e;
+      text-decoration: none;
+      padding: 14px 24px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 15px;
+    }
 
-            .contact-text h2,
-            .details h2,
-            .bottom h2 {
-                font-size: 36px;
-            }
+    .cta-button:hover {
+      background: #dfe3e0;
+    }
 
-        }
+    footer {
+      background: #252a29;
+      color: #cfd4d1;
+      padding: 40px 7%;
+    }
 
-    </style>
+    .footer-inner {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      align-items: center;
+    }
 
+    footer strong {
+      color: white;
+    }
+
+    footer a {
+      color: #cfd4d1;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: white;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 20px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 800px) {
+      nav {
+        padding: 15px 5%;
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
+
+      .nav-links a {
+        font-size: 12px;
+      }
+
+      .donate-nav {
+        padding: 8px 12px;
+      }
+
+      .page-hero,
+      section {
+        padding-left: 5%;
+        padding-right: 5%;
+      }
+
+      .contact-grid,
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-    <header>
+  <nav>
+    <a href="index.html" class="logo">Health<span>wise</span></a>
 
-        <div class="logo">Healthwise</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="mission.html">Our Mission</a>
+      <a href="causes.html">Causes</a>
+      <a href="help.html">How You Can Help</a>
+      <a href="contact.html">Contact</a>
 
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="mission.html">Our Mission</a>
-            <a href="causes.html">Causes</a>
-            <a href="help.html">How You Can Help</a>
-            <a href="contact.html">Contact</a>
-        </nav>
+      <a
+        href="https://www.gofundme.com/f/help-provide-healthcare-to-people-in-need"
+        class="donate-nav"
+        target="_blank"
+      >
+        Donate
+      </a>
+    </div>
+  </nav>
 
-    </header>
+
+  <header class="page-hero">
+    <div class="page-hero-inner">
+
+      <div class="eyebrow">Get in touch</div>
+
+      <h1>Have a question about Healthwise?</h1>
+
+      <p>
+        If you have a question, want to learn more about the project, or would
+        like to get in touch, you can contact Healthwise directly.
+      </p>
+
+    </div>
+  </header>
 
 
-    <section class="hero">
+  <section>
 
-        <div class="hero-content">
+    <div class="section-inner">
 
-            <div class="small-title">
-                CONTACT HEALTHWISE
-            </div>
+      <div class="contact-grid">
 
-            <h1>
-                Let's <span>connect.</span>
-            </h1>
+        <div>
+
+          <div class="section-label">Contact Healthwise</div>
+
+          <h2 class="section-title">
+            Let's stay connected.
+          </h2>
+
+          <p class="contact-intro">
+            Healthwise is a student-led project focused on healthcare access,
+            medicine, and humanitarian causes. Questions, ideas, and
+            opportunities to help spread awareness are welcome.
+          </p>
+
+
+          <div class="contact-card">
+
+            <h3>Email</h3>
 
             <p>
-                Have a question, suggestion, or want to get in touch
-                about Healthwise? You can reach me directly by email.
+              For questions or inquiries about Healthwise, contact:
             </p>
 
-        </div>
+            <a
+              href="mailto:peacedigne20@gmail.com"
+              class="email-link"
+            >
+              peacedigne20@gmail.com
+            </a>
 
-    </section>
-
-
-    <section class="contact-section">
-
-        <div class="contact-content">
-
-            <div class="contact-grid">
-
-                <div class="contact-text">
-
-                    <h2>
-                        Get in touch
-                    </h2>
-
-                    <p>
-                        Healthwise is open to questions, ideas, and
-                        opportunities to help support its mission.
-                    </p>
-
-                    <p>
-                        If you would like to discuss the project,
-                        suggest a reliable organization, or share
-                        information related to healthcare access or
-                        humanitarian assistance, send an email.
-                    </p>
-
-                </div>
+          </div>
 
 
-                <div class="contact-card">
+          <div class="social-box">
 
-                    <h3>
-                        Email
-                    </h3>
+            <h3>Follow Healthwise</h3>
 
-                    <p>
-                        The easiest way to contact Healthwise is
-                        through email.
-                    </p>
+            <div class="social-links">
 
-                    <a class="email" href="mailto:peacedigne20@gmail.com">
-                        peacedigne20@gmail.com
-                    </a>
+              <a
+                href="https://www.instagram.com/healthwise.action/"
+                target="_blank"
+              >
+                Instagram — @healthwise.action
+              </a>
 
-                </div>
+              <a
+                href="https://www.tiktok.com/@healthwise.action"
+                target="_blank"
+              >
+                TikTok — @healthwise.action
+              </a>
 
             </div>
 
-        </div>
-
-    </section>
-
-
-    <section class="details">
-
-        <div class="details-content">
-
-            <div>
-
-                <h2>
-                    What you can reach out about
-                </h2>
-
-                <p>
-                    Whether you have a question about the project or
-                    want to share something that could help Healthwise,
-                    your message is welcome.
-                </p>
-
-            </div>
-
-
-            <div class="details-list">
-
-                <p>
-                    Questions about Healthwise
-                </p>
-
-                <p>
-                    Suggestions for the project
-                </p>
-
-                <p>
-                    Information about healthcare access
-                </p>
-
-                <p>
-                    Humanitarian organizations and resources
-                </p>
-
-            </div>
+          </div>
 
         </div>
 
-    </section>
+
+        <div>
+
+          <div class="section-label">About the project</div>
+
+          <h2 class="section-title">
+            Built to inform, support, and connect.
+          </h2>
+
+          <p class="contact-intro">
+            Healthwise brings together research, awareness, and fundraising
+            around healthcare and humanitarian needs. The project aims to make
+            these issues easier to understand while supporting organizations
+            that are already working directly with people in need.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
 
 
-    <section class="bottom">
+  <section class="info-section">
 
-        <h2>
-            Thank you for supporting the mission.
-        </h2>
+    <div class="section-inner">
 
-        <p>
-            Raising awareness and supporting organizations doing
-            important work can help bring more attention to people
-            who need access to healthcare and humanitarian assistance.
-        </p>
+      <div class="section-label">Healthwise</div>
 
-    </section>
+      <h2 class="section-title">
+        What this project stands for.
+      </h2>
+
+      <div class="info-grid">
+
+        <div class="info-card">
+
+          <h3>Healthcare</h3>
+
+          <p>
+            Learning about barriers that prevent people from accessing basic
+            medical care and treatment.
+          </p>
+
+        </div>
 
 
-    <footer>
+        <div class="info-card">
 
-        <p>
-            © 2026 Healthwise
-        </p>
+          <h3>Humanitarian Support</h3>
 
-    </footer>
+          <p>
+            Supporting humanitarian medical work that helps people affected by
+            conflict, disasters, and other emergencies.
+          </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+          <h3>Transparency</h3>
+
+          <p>
+            Being clear about the purpose of fundraising and the organization
+            that the fundraiser is intended to support.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="cta">
+
+    <div class="section-inner">
+
+      <h2>Want to support the cause?</h2>
+
+      <p>
+        Healthwise is raising $10,000 CAD for Médecins Sans Frontières
+        (Doctors Without Borders) Canada.
+      </p>
+
+      <a
+        href="https://www.gofundme.com/f/help-provide-healthcare-to-people-in-need"
+        class="cta-button"
+        target="_blank"
+      >
+        Support the Fundraiser
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <footer>
+
+    <div class="footer-inner">
+
+      <div>
+        <strong>Healthwise</strong><br>
+        Student-led healthcare and humanitarian initiative.
+      </div>
+
+      <div class="footer-social">
+
+        <a
+          href="https://www.instagram.com/healthwise.action/"
+          target="_blank"
+        >
+          Instagram
+        </a>
+
+        <a
+          href="https://www.tiktok.com/@healthwise.action"
+          target="_blank"
+        >
+          TikTok
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+      </div>
+
+    </div>
+
+  </footer>
 
 </body>
-
 </html>
+```

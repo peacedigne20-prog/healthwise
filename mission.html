@@ -1,557 +1,572 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-```
 <title>Our Mission | Healthwise</title>
 
 <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
+html {
+    scroll-behavior: smooth;
+}
 
-    html {
-        scroll-behavior: smooth;
-    }
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f2f0eb;
+    color: #252a29;
+    line-height: 1.6;
+}
 
-    body {
-        font-family: Arial, Helvetica, sans-serif;
-        color: #172b35;
-        background: #ffffff;
-    }
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
-    header {
-        height: 78px;
-        padding: 0 6%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background: white;
-        border-bottom: 1px solid #e5ebe9;
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-    }
+/* NAVIGATION */
 
-    .logo {
-        font-size: 28px;
-        font-weight: 700;
-        letter-spacing: -1px;
-    }
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(242, 240, 235, 0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #d9d6cf;
+}
+
+.nav {
+    max-width: 1250px;
+    margin: auto;
+    padding: 19px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -1.2px;
+}
+
+.logo span {
+    color: #637c70;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+nav a {
+    color: #535b58;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: #252a29;
+}
+
+.donate-nav {
+    background: #536b60;
+    color: white !important;
+    padding: 11px 20px;
+    border-radius: 4px;
+}
+
+/* PAGE HERO */
+
+.page-hero {
+    background: #29312e;
+    color: white;
+    padding: 110px 30px;
+}
+
+.page-hero-content {
+    max-width: 1160px;
+    margin: auto;
+}
+
+.label {
+    color: #637c70;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 17px;
+}
+
+.page-hero .label {
+    color: #b8c9c0;
+}
+
+.page-hero h1 {
+    max-width: 850px;
+    font-size: clamp(50px, 7vw, 78px);
+    line-height: 1;
+    letter-spacing: -3px;
+    margin-bottom: 25px;
+}
+
+.page-hero p {
+    max-width: 700px;
+    color: #d7dcda;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* MAIN */
+
+.section {
+    padding: 100px 30px;
+}
+
+.container {
+    max-width: 1160px;
+    margin: auto;
+}
+
+.section h2 {
+    font-size: 46px;
+    line-height: 1.1;
+    letter-spacing: -2px;
+    margin-bottom: 22px;
+}
+
+.text {
+    color: #606864;
+    font-size: 17px;
+    line-height: 1.9;
+    max-width: 760px;
+}
+
+/* MISSION GRID */
+
+.mission-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 65px;
+    align-items: center;
+}
+
+.mission-image {
+    position: relative;
+}
+
+.mission-image img {
+    width: 100%;
+    height: 470px;
+    object-fit: cover;
+    display: block;
+    filter: brightness(.82);
+}
+
+.credit {
+    position: absolute;
+    bottom: 8px;
+    left: 10px;
+    background: rgba(0,0,0,.65);
+    color: white;
+    padding: 4px 7px;
+    font-size: 10px;
+}
+
+/* VALUES */
+
+.values {
+    background: #e7e4dd;
+}
+
+.value-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 45px;
+}
+
+.value {
+    background: #f7f5f0;
+    border: 1px solid #d4d1c9;
+    padding: 32px;
+}
+
+.value-number {
+    color: #637c70;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+.value h3 {
+    font-size: 23px;
+    margin-bottom: 13px;
+}
+
+.value p {
+    color: #626a66;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* FUNDRAISING */
+
+.fundraising {
+    background: #f7f5f0;
+    text-align: center;
+}
+
+.fundraising-content {
+    max-width: 780px;
+    margin: auto;
+}
+
+.fundraising p {
+    color: #606864;
+    font-size: 17px;
+    line-height: 1.9;
+    margin-bottom: 30px;
+}
+
+.button {
+    display: inline-block;
+    padding: 15px 24px;
+    border-radius: 4px;
+    background: #637c70;
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.button:hover {
+    background: #50685d;
+}
+
+/* FOOTER */
+
+footer {
+    background: #252b29;
+    color: white;
+    padding: 45px 30px;
+}
+
+.footer {
+    max-width: 1160px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.footer p {
+    color: #adb5b1;
+    font-size: 13px;
+}
+
+.footer a {
+    color: #d7dbd8;
+}
+
+.footer .logo {
+    color: white;
+}
+
+.footer .logo span {
+    color: #a9bbb2;
+}
+
+/* MOBILE */
+
+@media (max-width: 850px) {
 
     nav {
-        display: flex;
-        gap: 28px;
-        align-items: center;
+        gap: 12px;
     }
 
     nav a {
-        color: #172b35;
-        text-decoration: none;
-        font-size: 15px;
-        font-weight: 600;
+        font-size: 11px;
     }
 
-    nav a:hover {
-        color: #177e78;
+    .mission-grid {
+        grid-template-columns: 1fr;
     }
 
-    .hero {
-        background: #eef7f4;
-        padding: 110px 6% 120px;
-        text-align: center;
+    .value-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .nav {
+        flex-direction: column;
+        gap: 15px;
     }
 
-    .hero-content {
-        max-width: 950px;
-        margin: auto;
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
-    .small-title {
-        color: #177e78;
-        font-size: 14px;
-        font-weight: 700;
-        letter-spacing: 2px;
-        margin-bottom: 25px;
+    .page-hero {
+        padding: 80px 22px;
     }
 
-    .hero h1 {
-        font-size: clamp(52px, 7vw, 88px);
-        line-height: 1;
-        letter-spacing: -5px;
-        margin-bottom: 30px;
+    .section {
+        padding: 75px 22px;
     }
 
-    .hero h1 span {
-        color: #177e78;
+    .section h2 {
+        font-size: 38px;
     }
 
-    .hero p {
-        max-width: 760px;
-        margin: auto;
-        color: #52656c;
-        font-size: 20px;
-        line-height: 1.8;
+    .footer {
+        flex-direction: column;
     }
-
-    .intro {
-        padding: 110px 6%;
-    }
-
-    .intro-content {
-        max-width: 850px;
-        margin: auto;
-        text-align: center;
-    }
-
-    .intro h2 {
-        font-size: 48px;
-        letter-spacing: -2px;
-        margin-bottom: 25px;
-    }
-
-    .intro p {
-        color: #52656c;
-        font-size: 19px;
-        line-height: 1.9;
-    }
-
-    .feature {
-        background: #183b4e;
-        color: white;
-        padding: 100px 6%;
-    }
-
-    .feature-content {
-        max-width: 1050px;
-        margin: auto;
-    }
-
-    .feature h2 {
-        text-align: center;
-        font-size: 45px;
-        margin-bottom: 60px;
-    }
-
-    .feature-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1px;
-        background: rgba(255,255,255,0.2);
-    }
-
-    .feature-item {
-        padding: 45px;
-        background: #183b4e;
-        min-height: 220px;
-    }
-
-    .feature-item h3 {
-        font-size: 25px;
-        margin-bottom: 18px;
-    }
-
-    .feature-item p {
-        color: #d6e2e5;
-        font-size: 17px;
-        line-height: 1.8;
-    }
-
-    .focus {
-        padding: 110px 6%;
-        background: white;
-    }
-
-    .focus-content {
-        max-width: 1050px;
-        margin: auto;
-    }
-
-    .focus-title {
-        text-align: center;
-        margin-bottom: 60px;
-    }
-
-    .focus-title h2 {
-        font-size: 48px;
-        margin-bottom: 20px;
-    }
-
-    .focus-title p {
-        max-width: 720px;
-        margin: auto;
-        color: #52656c;
-        font-size: 18px;
-        line-height: 1.8;
-    }
-
-    .focus-list {
-        border-top: 1px solid #dce5e2;
-    }
-
-    .focus-row {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        gap: 60px;
-        padding: 35px 15px;
-        border-bottom: 1px solid #dce5e2;
-    }
-
-    .focus-row h3 {
-        font-size: 25px;
-    }
-
-    .focus-row p {
-        color: #52656c;
-        font-size: 17px;
-        line-height: 1.8;
-    }
-
-    .support {
-        background: #eef7f4;
-        padding: 105px 6%;
-    }
-
-    .support-content {
-        max-width: 900px;
-        margin: auto;
-        text-align: center;
-    }
-
-    .support h2 {
-        font-size: 48px;
-        margin-bottom: 25px;
-    }
-
-    .support p {
-        color: #52656c;
-        font-size: 19px;
-        line-height: 1.9;
-        margin-bottom: 20px;
-    }
-
-    .cta {
-        padding: 105px 6%;
-        text-align: center;
-        background: white;
-    }
-
-    .cta h2 {
-        font-size: 50px;
-        margin-bottom: 20px;
-    }
-
-    .cta p {
-        max-width: 650px;
-        margin: 0 auto 30px;
-        color: #52656c;
-        font-size: 18px;
-        line-height: 1.8;
-    }
-
-    .button {
-        display: inline-block;
-        background: #177e78;
-        color: white;
-        text-decoration: none;
-        padding: 16px 28px;
-        border-radius: 8px;
-        font-weight: 700;
-    }
-
-    .button:hover {
-        background: #12655f;
-    }
-
-    footer {
-        background: #102b38;
-        color: #c9d5d9;
-        text-align: center;
-        padding: 35px;
-        font-size: 14px;
-    }
-
-    @media (max-width: 750px) {
-
-        header {
-            height: auto;
-            padding: 18px 25px;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        nav {
-            gap: 13px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        nav a {
-            font-size: 12px;
-        }
-
-        .hero {
-            padding: 75px 25px;
-        }
-
-        .hero h1 {
-            letter-spacing: -3px;
-        }
-
-        .intro,
-        .feature,
-        .focus,
-        .support,
-        .cta {
-            padding: 75px 25px;
-        }
-
-        .intro h2,
-        .focus-title h2,
-        .support h2,
-        .cta h2 {
-            font-size: 36px;
-        }
-
-        .feature-grid {
-            grid-template-columns: 1fr;
-        }
-
-        .focus-row {
-            grid-template-columns: 1fr;
-            gap: 12px;
-        }
-    }
-
+}
 </style>
-```
-
 </head>
 
 <body>
 
-```
 <header>
 
-    <div class="logo">Healthwise</div>
+<div class="nav">
+
+    <a href="index.html" class="logo">
+        Health<span>wise</span>
+    </a>
 
     <nav>
-        <a href="index.html">Home</a>
-        <a href="mission.html">Our Mission</a>
-        <a href="causes.html">Causes</a>
-        <a href="help.html">How You Can Help</a>
-        <a href="contact.html">Contact</a>
+        <a href="index.html">HOME</a>
+        <a href="mission.html">OUR MISSION</a>
+        <a href="causes.html">CAUSES</a>
+        <a href="help.html">HOW YOU CAN HELP</a>
+        <a href="contact.html">CONTACT</a>
+
+        <a
+            href="https://www.gofundme.com/f/help-provide-healthcare-to-people-in-need"
+            target="_blank"
+            class="donate-nav">
+            DONATE
+        </a>
     </nav>
+
+</div>
 
 </header>
 
-<section class="hero">
 
-    <div class="hero-content">
+<section class="page-hero">
 
-        <div class="small-title">OUR MISSION</div>
+<div class="page-hero-content">
 
-        <h1>
-            Everyone deserves access to <span>healthcare.</span>
-        </h1>
+    <div class="label">
+        OUR MISSION
+    </div>
 
-        <p>
-            Healthwise supports better access to healthcare, essential
-            medicine, and humanitarian assistance for people facing
-            difficult circumstances.
+    <h1>
+        Healthcare should be available to everyone.
+    </h1>
+
+    <p>
+        Healthwise is a student-led initiative focused on healthcare
+        access and humanitarian medical needs.
+    </p>
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<div class="container mission-grid">
+
+    <div>
+
+        <div class="label">
+            WHY HEALTHWISE EXISTS
+        </div>
+
+        <h2>
+            Where you are born should not decide whether you receive care.
+        </h2>
+
+        <p class="text">
+            Millions of people face barriers to healthcare because of
+            conflict, poverty, displacement, disasters and limited
+            medical resources.
+        </p>
+
+        <br>
+
+        <p class="text">
+            Healthwise was created to learn more about these issues,
+            raise awareness and support organizations that provide
+            medical assistance to people who need it.
         </p>
 
     </div>
 
-</section>
+    <div class="mission-image">
 
-<section class="intro">
+        <img
+            src="https://commons.wikimedia.org/wiki/Special:FilePath/Democratic%20Republic%20of%20Congo%20Training%20Healthcare%20Workers%20%2836813869690%29.jpg"
+            alt="Healthcare workers in the Democratic Republic of Congo">
 
-    <div class="intro-content">
-
-        <h2>Healthcare is a basic need.</h2>
-
-        <p>
-            For many people, getting medical care is not as simple as
-            making an appointment. Cost, location, conflict, displacement,
-            and limited medical resources can all stand between a person
-            and the treatment they need.
-        </p>
-
-    </div>
-
-</section>
-
-<section class="feature">
-
-    <div class="feature-content">
-
-        <h2>What Healthwise stands for</h2>
-
-        <div class="feature-grid">
-
-            <div class="feature-item">
-
-                <h3>Access to Care</h3>
-
-                <p>
-                    Supporting work that helps people reach doctors,
-                    clinics, hospitals, and essential health services.
-                </p>
-
-            </div>
-
-            <div class="feature-item">
-
-                <h3>Essential Medicine</h3>
-
-                <p>
-                    Helping bring attention to the importance of reliable
-                    access to medicines that people depend on.
-                </p>
-
-            </div>
-
-            <div class="feature-item">
-
-                <h3>Humanitarian Aid</h3>
-
-                <p>
-                    Supporting organizations providing medical and
-                    humanitarian assistance during conflicts,
-                    disasters, and emergencies.
-                </p>
-
-            </div>
-
-            <div class="feature-item">
-
-                <h3>Reliable Information</h3>
-
-                <p>
-                    Sharing clear, responsible information about health
-                    and humanitarian issues without spreading misleading
-                    or unverified claims.
-                </p>
-
-            </div>
-
+        <div class="credit">
+            Photo: Alaine Knipes / CDC Global Health · CC BY 2.0
         </div>
 
     </div>
 
+</div>
+
 </section>
 
-<section class="focus">
 
-    <div class="focus-content">
+<section class="section values">
 
-        <div class="focus-title">
+<div class="container">
 
-            <h2>Where support can make a difference</h2>
+    <div class="label">
+        WHAT WE BELIEVE
+    </div>
+
+    <h2>
+        Three things guide Healthwise.
+    </h2>
+
+    <div class="value-grid">
+
+        <div class="value">
+
+            <div class="value-number">
+                01
+            </div>
+
+            <h3>
+                Access
+            </h3>
 
             <p>
-                Healthwise focuses on real problems that affect people's
-                ability to receive the care they need.
+                Everyone deserves access to essential healthcare,
+                regardless of their circumstances or location.
             </p>
 
         </div>
 
-        <div class="focus-list">
 
-            <div class="focus-row">
+        <div class="value">
 
-                <h3>Healthcare Access</h3>
-
-                <p>
-                    People in underserved communities can face long
-                    distances, high costs, shortages of medical staff,
-                    and limited healthcare facilities.
-                </p>
-
+            <div class="value-number">
+                02
             </div>
 
-            <div class="focus-row">
+            <h3>
+                Awareness
+            </h3>
 
-                <h3>Medicine</h3>
+            <p>
+                Understanding healthcare and humanitarian problems
+                is an important part of creating meaningful support.
+            </p>
 
-                <p>
-                    Access to essential medicine can be especially
-                    difficult in communities affected by poverty,
-                    emergencies, or limited healthcare infrastructure.
-                </p>
+        </div>
 
+
+        <div class="value">
+
+            <div class="value-number">
+                03
             </div>
 
-            <div class="focus-row">
+            <h3>
+                Action
+            </h3>
 
-                <h3>Humanitarian Crises</h3>
-
-                <p>
-                    Conflict and disasters can disrupt healthcare systems
-                    and leave people without the medical services and
-                    supplies they need.
-                </p>
-
-            </div>
+            <p>
+                Awareness matters, but supporting organizations that
+                are already providing medical assistance can create
+                direct impact.
+            </p>
 
         </div>
 
     </div>
 
+</div>
+
 </section>
 
-<section class="support">
 
-    <div class="support-content">
+<section class="section fundraising">
 
-        <div class="small-title">THE GOAL</div>
+<div class="fundraising-content">
 
-        <h2>Turn concern into meaningful support.</h2>
+    <div class="label">
+        CURRENT FUNDRAISER
+    </div>
+
+    <h2>
+        Help support medical humanitarian work.
+    </h2>
+
+    <p>
+        Healthwise is raising $10,000 CAD for Médecins Sans Frontières /
+        Doctors Without Borders Canada. MSF can direct donated funds
+        toward medical humanitarian needs where they are most needed.
+    </p>
+
+    <a
+        href="https://www.gofundme.com/f/help-provide-healthcare-to-people-in-need"
+        target="_blank"
+        class="button">
+        DONATE THROUGH GOFUNDME
+    </a>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<div class="footer">
+
+    <div>
+
+        <div class="logo">
+            Health<span>wise</span>
+        </div>
 
         <p>
-            Healthwise is focused on supporting organizations that already
-            have the experience, people, and resources to help communities
-            in need.
-        </p>
-
-        <p>
-            Every contribution matters because collective support can
-            help trusted organizations provide healthcare, medicine,
-            emergency assistance, and other essential services.
+            Student-led healthcare and humanitarian initiative.
         </p>
 
     </div>
 
-</section>
+    <div>
 
-<section class="cta">
+        <p>Contact</p>
 
-    <h2>Be part of the mission.</h2>
+        <a href="mailto:peacedigne20@gmail.com">
+            peacedigne20@gmail.com
+        </a>
 
-    <p>
-        Learn more about the causes Healthwise supports and the different
-        ways you can help.
-    </p>
+    </div>
 
-    <a href="help.html" class="button">How You Can Help</a>
-
-</section>
-
-<footer>
-
-    <p>© 2026 Healthwise</p>
+</div>
 
 </footer>
 
-
 </body>
-
 </html>

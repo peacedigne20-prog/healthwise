@@ -1,444 +1,721 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Causes | Healthwise</title>
 
-    <title>Causes | Healthwise</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        html {
-            scroll-behavior: smooth;
-        }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f2f0eb;
+      color: #252a29;
+      line-height: 1.6;
+    }
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            color: #172b35;
-            background: #ffffff;
-        }
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(242, 240, 235, 0.96);
+      border-bottom: 1px solid #d8d5ce;
+      padding: 18px 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-        header {
-            height: 78px;
-            padding: 0 6%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: white;
-            border-bottom: 1px solid #e5ebe9;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+    .logo {
+      font-size: 25px;
+      font-weight: 700;
+      color: #252a29;
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
 
-        .logo {
-            font-size: 28px;
-            font-weight: 700;
-            letter-spacing: -1px;
-        }
+    .logo span {
+      color: #637c70;
+    }
 
-        nav {
-            display: flex;
-            gap: 28px;
-            align-items: center;
-        }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
 
-        nav a {
-            color: #172b35;
-            text-decoration: none;
-            font-size: 15px;
-            font-weight: 600;
-        }
+    .nav-links a {
+      color: #29312e;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+    }
 
-        nav a:hover {
-            color: #177e78;
-        }
+    .nav-links a:hover {
+      color: #637c70;
+    }
 
-        .hero {
-            background: #eef7f4;
-            padding: 105px 6% 115px;
-            text-align: center;
-        }
+    .donate-nav {
+      background: #29312e;
+      color: white !important;
+      padding: 10px 18px;
+      border-radius: 6px;
+    }
 
-        .hero-content {
-            max-width: 900px;
-            margin: auto;
-        }
+    .donate-nav:hover {
+      background: #637c70;
+    }
 
-        .small-title {
-            color: #177e78;
-            font-size: 14px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            margin-bottom: 25px;
-        }
+    .page-hero {
+      padding: 100px 7% 80px;
+      background: #29312e;
+      color: white;
+    }
 
-        .hero h1 {
-            font-size: clamp(52px, 7vw, 88px);
-            line-height: 1;
-            letter-spacing: -5px;
-            margin-bottom: 28px;
-        }
+    .page-hero-inner {
+      max-width: 900px;
+    }
 
-        .hero h1 span {
-            color: #177e78;
-        }
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #bfcac3;
+      margin-bottom: 18px;
+    }
 
-        .hero p {
-            max-width: 750px;
-            margin: auto;
-            color: #52656c;
-            font-size: 19px;
-            line-height: 1.8;
-        }
+    .page-hero h1 {
+      font-size: clamp(42px, 7vw, 76px);
+      line-height: 1.05;
+      letter-spacing: -2px;
+      margin-bottom: 24px;
+    }
 
-        .causes {
-            padding: 105px 6%;
-        }
+    .page-hero p {
+      max-width: 720px;
+      font-size: 19px;
+      color: #e2e5e2;
+    }
 
-        .causes-content {
-            max-width: 1100px;
-            margin: auto;
-        }
+    section {
+      padding: 90px 7%;
+    }
 
-        .section-heading {
-            max-width: 750px;
-            margin-bottom: 55px;
-        }
+    .section-inner {
+      max-width: 1100px;
+      margin: auto;
+    }
 
-        .section-heading h2 {
-            font-size: 46px;
-            letter-spacing: -2px;
-            margin-bottom: 20px;
-        }
+    .section-label {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #637c70;
+      margin-bottom: 14px;
+    }
 
-        .section-heading p {
-            color: #52656c;
-            font-size: 18px;
-            line-height: 1.8;
-        }
+    .section-title {
+      font-size: clamp(32px, 5vw, 50px);
+      line-height: 1.1;
+      letter-spacing: -1px;
+      margin-bottom: 20px;
+      color: #252a29;
+    }
 
-        .cause {
-            display: grid;
-            grid-template-columns: 320px 1fr;
-            gap: 60px;
-            padding: 42px 0;
-            border-top: 1px solid #dce5e2;
-        }
+    .section-intro {
+      max-width: 720px;
+      font-size: 17px;
+      color: #59615e;
+      margin-bottom: 50px;
+    }
 
-        .cause:last-child {
-            border-bottom: 1px solid #dce5e2;
-        }
+    .cause-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
 
-        .cause h3 {
-            font-size: 28px;
-            line-height: 1.2;
-        }
+    .cause-card {
+      background: #e7e4dd;
+      border: 1px solid #d8d5ce;
+      padding: 34px;
+      border-radius: 8px;
+    }
 
-        .cause p {
-            color: #52656c;
-            font-size: 17px;
-            line-height: 1.85;
-            max-width: 650px;
-        }
+    .cause-number {
+      font-size: 13px;
+      font-weight: 700;
+      color: #637c70;
+      margin-bottom: 28px;
+    }
 
-        .impact {
-            background: #183b4e;
-            color: white;
-            padding: 100px 6%;
-        }
+    .cause-card h3 {
+      font-size: 25px;
+      margin-bottom: 14px;
+      color: #252a29;
+    }
 
-        .impact-content {
-            max-width: 950px;
-            margin: auto;
-            text-align: center;
-        }
+    .cause-card p {
+      color: #59615e;
+      font-size: 15px;
+    }
 
-        .impact h2 {
-            font-size: 45px;
-            letter-spacing: -1px;
-            margin-bottom: 25px;
-        }
+    .country-section {
+      background: #ffffff;
+    }
 
-        .impact p {
-            max-width: 750px;
-            margin: auto;
-            color: #d6e2e5;
-            font-size: 18px;
-            line-height: 1.85;
-        }
+    .country-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+    }
 
-        .cta {
-            padding: 100px 6%;
-            text-align: center;
-            background: #eef7f4;
-        }
+    .country-card {
+      border: 1px solid #d8d5ce;
+      background: #f2f0eb;
+      border-radius: 8px;
+      overflow: hidden;
+    }
 
-        .cta h2 {
-            font-size: 45px;
-            letter-spacing: -1px;
-            margin-bottom: 20px;
-        }
+    .country-card img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      display: block;
+    }
 
-        .cta p {
-            max-width: 650px;
-            margin: 0 auto 30px;
-            color: #52656c;
-            font-size: 18px;
-            line-height: 1.8;
-        }
+    .country-content {
+      padding: 28px;
+    }
 
-        .button {
-            display: inline-block;
-            background: #177e78;
-            color: white;
-            text-decoration: none;
-            padding: 16px 28px;
-            border-radius: 8px;
-            font-weight: 700;
-        }
+    .country-content h3 {
+      font-size: 27px;
+      margin-bottom: 12px;
+    }
 
-        .button:hover {
-            background: #12655f;
-        }
+    .country-content p {
+      color: #59615e;
+      font-size: 15px;
+    }
 
-        footer {
-            background: #102b38;
-            color: #c9d5d9;
-            text-align: center;
-            padding: 35px;
-            font-size: 14px;
-        }
+    .photo-credit {
+      display: block;
+      margin-top: 14px;
+      font-size: 11px;
+      color: #777d7a;
+    }
 
-        @media (max-width: 750px) {
+    .why-section {
+      background: #f2f0eb;
+    }
 
-            header {
-                height: auto;
-                padding: 18px 25px;
-                flex-direction: column;
-                gap: 15px;
-            }
+    .why-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
 
-            nav {
-                gap: 13px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
+    .why-content p {
+      color: #59615e;
+      font-size: 16px;
+      margin-bottom: 18px;
+    }
 
-            nav a {
-                font-size: 12px;
-            }
+    .facts {
+      border-left: 3px solid #637c70;
+      padding-left: 28px;
+    }
 
-            .hero {
-                padding: 75px 25px;
-            }
+    .fact {
+      margin-bottom: 30px;
+    }
 
-            .hero h1 {
-                letter-spacing: -3px;
-            }
+    .fact:last-child {
+      margin-bottom: 0;
+    }
 
-            .causes,
-            .impact,
-            .cta {
-                padding: 75px 25px;
-            }
+    .fact h3 {
+      font-size: 20px;
+      margin-bottom: 7px;
+    }
 
-            .section-heading h2,
-            .impact h2,
-            .cta h2 {
-                font-size: 36px;
-            }
+    .fact p {
+      margin: 0;
+      font-size: 14px;
+    }
 
-            .cause {
-                grid-template-columns: 1fr;
-                gap: 15px;
-            }
-        }
-    </style>
+    .cta {
+      background: #29312e;
+      color: white;
+      text-align: center;
+    }
 
+    .cta .section-inner {
+      max-width: 800px;
+    }
+
+    .cta h2 {
+      font-size: clamp(34px, 5vw, 52px);
+      line-height: 1.1;
+      margin-bottom: 18px;
+    }
+
+    .cta p {
+      color: #dfe3e0;
+      font-size: 17px;
+      margin-bottom: 30px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: white;
+      color: #29312e;
+      text-decoration: none;
+      padding: 14px 24px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .cta-button:hover {
+      background: #dfe3e0;
+    }
+
+    footer {
+      background: #252a29;
+      color: #cfd4d1;
+      padding: 40px 7%;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      align-items: center;
+    }
+
+    footer strong {
+      color: white;
+    }
+
+    footer a {
+      color: #cfd4d1;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: white;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 20px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 800px) {
+      nav {
+        padding: 15px 5%;
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
+
+      .nav-links a {
+        font-size: 12px;
+      }
+
+      .donate-nav {
+        padding: 8px 12px;
+      }
+
+      .page-hero,
+      section {
+        padding-left: 5%;
+        padding-right: 5%;
+      }
+
+      .cause-grid,
+      .country-grid,
+      .why-content {
+        grid-template-columns: 1fr;
+      }
+
+      .country-card img {
+        height: 220px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-    <header>
+  <nav>
+    <a href="index.html" class="logo">Health<span>wise</span></a>
 
-        <div class="logo">Healthwise</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="mission.html">Our Mission</a>
+      <a href="causes.html">Causes</a>
+      <a href="help.html">How You Can Help</a>
+      <a href="contact.html">Contact</a>
+      <a
+        href="https://www.gofundme.com/f/help-provide-healthcare-to-people-in-need"
+        class="donate-nav"
+        target="_blank"
+      >Donate</a>
+    </div>
+  </nav>
 
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="mission.html">Our Mission</a>
-            <a href="causes.html">Causes</a>
-            <a href="help.html">How You Can Help</a>
-            <a href="contact.html">Contact</a>
-        </nav>
 
-    </header>
+  <header class="page-hero">
+    <div class="page-hero-inner">
+      <div class="eyebrow">The issues</div>
+
+      <h1>Healthcare should not depend on where you live.</h1>
+
+      <p>
+        Healthwise focuses on healthcare access, medicine, and humanitarian
+        emergencies affecting people around the world.
+      </p>
+    </div>
+  </header>
 
 
-    <section class="hero">
+  <section>
+    <div class="section-inner">
 
-        <div class="hero-content">
+      <div class="section-label">What we focus on</div>
 
-            <div class="small-title">
-                THE CAUSES
-            </div>
+      <h2 class="section-title">
+        Three areas at the center of Healthwise.
+      </h2>
 
-            <h1>
-                Where help can <span>matter.</span>
-            </h1>
+      <p class="section-intro">
+        Millions of people face barriers to basic medical care because of
+        poverty, conflict, displacement, disasters, or limited healthcare
+        resources. Healthwise aims to learn about these problems and support
+        organizations working directly with affected communities.
+      </p>
+
+
+      <div class="cause-grid">
+
+        <div class="cause-card">
+          <div class="cause-number">01</div>
+
+          <h3>Healthcare Access</h3>
+
+          <p>
+            Many people around the world cannot reliably access doctors,
+            hospitals, medicines, or other essential healthcare. Healthwise
+            raises awareness about these barriers and why access to healthcare
+            matters.
+          </p>
+        </div>
+
+
+        <div class="cause-card">
+          <div class="cause-number">02</div>
+
+          <h3>Medicine</h3>
+
+          <p>
+            Medical supplies, treatments, vaccinations, and emergency care can
+            become difficult to access during crises. Supporting humanitarian
+            medical organizations can help provide care where healthcare
+            systems are under serious pressure.
+          </p>
+        </div>
+
+
+        <div class="cause-card">
+          <div class="cause-number">03</div>
+
+          <h3>Humanitarian Emergencies</h3>
+
+          <p>
+            Conflict, displacement, disasters, and disease outbreaks can leave
+            communities with urgent medical needs. Healthwise supports
+            humanitarian efforts focused on providing medical care to people
+            affected by these emergencies.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <section class="country-section">
+
+    <div class="section-inner">
+
+      <div class="section-label">Around the world</div>
+
+      <h2 class="section-title">
+        Healthcare needs exist across many regions.
+      </h2>
+
+      <p class="section-intro">
+        Humanitarian medical organizations work in places where people face
+        serious barriers to healthcare. These examples show some of the
+        communities and situations that require continued medical support.
+      </p>
+
+
+      <div class="country-grid">
+
+        <div class="country-card">
+
+          <img
+            src="https://commons.wikimedia.org/wiki/Special:FilePath/Democratic%20Republic%20of%20Congo%20Training%20Healthcare%20Workers%20%2836813869690%29.jpg"
+            alt="Healthcare workers in the Democratic Republic of the Congo"
+          >
+
+          <div class="country-content">
+
+            <h3>Democratic Republic of the Congo</h3>
 
             <p>
-                Healthwise focuses on healthcare access, essential medicine,
-                and humanitarian assistance for people facing serious barriers
-                to the care and support they need.
+              Communities across the Democratic Republic of the Congo face
+              major healthcare challenges, including infectious diseases,
+              limited access to medical services, and humanitarian emergencies.
+              Medical organizations provide care and support in areas where
+              healthcare needs are especially significant.
             </p>
 
+            <span class="photo-credit">
+              Photo: Alaine Knipes / CDC Global Health · CC BY 2.0
+            </span>
+
+          </div>
         </div>
 
-    </section>
 
+        <div class="country-card">
 
-    <section class="causes">
+          <img
+            src="https://commons.wikimedia.org/wiki/Special:FilePath/Palestine%20hospital%20in%20Cairo.jpg"
+            alt="Hospital in Cairo serving Palestinian patients"
+          >
 
-        <div class="causes-content">
+          <div class="country-content">
 
-            <div class="section-heading">
-
-                <h2>
-                    The issues we focus on
-                </h2>
-
-                <p>
-                    These are areas where access to healthcare and essential
-                    support can have a direct impact on people's lives.
-                </p>
-
-            </div>
-
-
-            <div class="cause">
-
-                <h3>
-                    Healthcare Access
-                </h3>
-
-                <p>
-                    Millions of people face barriers to basic medical care.
-                    Distance, cost, shortages of healthcare workers, and
-                    limited facilities can prevent people from receiving
-                    treatment when they need it.
-                </p>
-
-            </div>
-
-
-            <div class="cause">
-
-                <h3>
-                    Essential Medicine
-                </h3>
-
-                <p>
-                    Medicines are an essential part of healthcare, yet many
-                    communities face shortages or difficulty accessing the
-                    treatments they need. Supporting organizations that work
-                    to improve availability can help address this gap.
-                </p>
-
-            </div>
-
-
-            <div class="cause">
-
-                <h3>
-                    Humanitarian Aid
-                </h3>
-
-                <p>
-                    Conflict, natural disasters, and other emergencies can
-                    disrupt healthcare systems and leave communities without
-                    medical care and basic necessities. Humanitarian
-                    organizations provide critical assistance in these
-                    situations.
-                </p>
-
-            </div>
-
-
-            <div class="cause">
-
-                <h3>
-                    Health Education
-                </h3>
-
-                <p>
-                    Clear and reliable health information can help people
-                    understand important health issues and make informed
-                    decisions. Access to trustworthy information is an
-                    important part of improving health.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <section class="impact">
-
-        <div class="impact-content">
-
-            <h2>
-                Real problems need real support.
-            </h2>
+            <h3>Palestine</h3>
 
             <p>
-                Healthwise is committed to directing attention and support
-                toward established organizations that are already working
-                with communities affected by healthcare shortages,
-                humanitarian emergencies, and limited access to essential
-                resources.
+              Conflict and displacement can place enormous pressure on
+              healthcare systems. Medical humanitarian organizations provide
+              healthcare and other forms of support to people affected by the
+              ongoing humanitarian situation.
             </p>
+
+            <span class="photo-credit">
+              Photo: Wikimedia Commons · CC BY-SA 4.0
+            </span>
+
+          </div>
+        </div>
+
+
+        <div class="country-card">
+
+          <img
+            src="https://commons.wikimedia.org/wiki/Special:FilePath/Sudanesische%20Gefl%C3%BCchtete.jpg"
+            alt="Sudanese refugees"
+          >
+
+          <div class="country-content">
+
+            <h3>Sudan</h3>
+
+            <p>
+              The conflict in Sudan has created severe humanitarian needs,
+              including the need for emergency medical care, medicines,
+              maternal and child healthcare, nutrition support, and other
+              essential services.
+            </p>
+
+            <span class="photo-credit">
+              Photo: Wikimedia Commons · CC BY-SA 4.0
+            </span>
+
+          </div>
+        </div>
+
+
+        <div class="country-card">
+
+          <img
+            src="https://commons.wikimedia.org/wiki/Special:FilePath/Hospital%20in%20Haiti%20%2830988304984%29.jpg"
+            alt="Hospital in Haiti"
+          >
+
+          <div class="country-content">
+
+            <h3>Haiti</h3>
+
+            <p>
+              Haiti faces significant healthcare challenges, including limited
+              medical resources and humanitarian emergencies. Access to reliable
+              medical services remains an important issue for many communities.
+            </p>
+
+            <span class="photo-credit">
+              Photo: Wikimedia Commons · CC BY 2.0
+            </span>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <section class="why-section">
+
+    <div class="section-inner">
+
+      <div class="why-content">
+
+        <div>
+
+          <div class="section-label">Why it matters</div>
+
+          <h2 class="section-title">
+            A medical emergency can become a humanitarian emergency.
+          </h2>
+
+          <p>
+            When healthcare systems are damaged or overwhelmed, people can
+            lose access to basic treatment, medicines, vaccinations, and
+            emergency care.
+          </p>
+
+          <p>
+            Humanitarian medical organizations work to fill some of these gaps
+            by providing healthcare directly to people affected by conflict,
+            disasters, disease outbreaks, and exclusion from healthcare.
+          </p>
+
+          <p>
+            Healthwise exists to help people understand these issues and to
+            support organizations that already have the experience and
+            infrastructure to respond.
+          </p>
 
         </div>
 
-    </section>
+
+        <div class="facts">
+
+          <div class="fact">
+            <h3>Access</h3>
+            <p>
+              Healthcare is a basic need, but access to it is not equal
+              everywhere.
+            </p>
+          </div>
+
+          <div class="fact">
+            <h3>Emergency care</h3>
+            <p>
+              Crises can create sudden and overwhelming medical needs.
+            </p>
+          </div>
+
+          <div class="fact">
+            <h3>Humanitarian response</h3>
+            <p>
+              Medical organizations can provide essential care in difficult
+              environments.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
 
 
-    <section class="cta">
+  <section class="cta">
 
-        <h2>
-            Help make a difference.
-        </h2>
+    <div class="section-inner">
 
-        <p>
-            Whether you donate, share the cause, or help spread awareness,
-            your support can contribute to work that reaches people who
-            need it.
-        </p>
+      <h2>Help support medical care where it is needed most.</h2>
 
-        <a href="help.html" class="button">
-            How You Can Help
+      <p>
+        Healthwise is raising $10,000 CAD for Médecins Sans Frontières
+        (Doctors Without Borders) Canada to support its medical humanitarian
+        work.
+      </p>
+
+      <a
+        href="https://www.gofundme.com/f/help-provide-healthcare-to-people-in-need"
+        class="cta-button"
+        target="_blank"
+      >
+        Support the Fundraiser
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <footer>
+
+    <div class="footer-inner">
+
+      <div>
+        <strong>Healthwise</strong><br>
+        Student-led healthcare and humanitarian initiative.
+      </div>
+
+      <div class="footer-social">
+        <a href="https://www.instagram.com/healthwise.action/" target="_blank">
+          Instagram
         </a>
 
-    </section>
+        <a href="https://www.tiktok.com/@healthwise.action" target="_blank">
+          TikTok
+        </a>
 
+        <a href="contact.html">
+          Contact
+        </a>
+      </div>
 
-    <footer>
+    </div>
 
-        <p>
-            © 2026 Healthwise
-        </p>
-
-    </footer>
+  </footer>
 
 </body>
-
 </html>
